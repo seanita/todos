@@ -9,6 +9,7 @@ class TodosController < ApplicationController
 
 	def create
 		@todo = Todo.new(todo_params)
+		@todo.user = current_user
 		@todo.save
 		redirect_to todos_path
 	end
@@ -16,5 +17,7 @@ class TodosController < ApplicationController
 private
 	def todo_params
 		params.require(:todo).permit(:email)
+		#params.require(:owner_mail).permit(:description)
+
 	end
 end
