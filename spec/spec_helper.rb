@@ -39,4 +39,6 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+  #makes available FG syntax methods like 'build, create, build stub, attributes'
+  config.include FactoryGirl::Syntax::Methods
 end
