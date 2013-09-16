@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
   #creates an object 'current_user' with method of 'email'
   def current_user
-  	OpenStruct.new(email: session[:current_email])
+  	OpenStruct.new(email: session[:current_email], todos: Todo.all)
   end
 
   helper_method :current_user
