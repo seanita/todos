@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
 		session[:current_email] = email
   end
 
+  #creates an object 'current_user' with method of 'email'
   def current_user
   	OpenStruct.new(email: session[:current_email])
   end
