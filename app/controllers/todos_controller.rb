@@ -14,10 +14,9 @@ class TodosController < ApplicationController
 		redirect_to todos_path
 	end
 
-private
-	def todo_params
-		params.require(:todo).permit(:email)
-		#params.require(:owner_mail).permit(:description)
 
+	def todo_params
+		params.require(:todo).permit(:email, :description)
+		#params.require(:owner_mail).permit(:description)
 	end
 end
